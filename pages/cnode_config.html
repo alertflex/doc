@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cnode Configuration &mdash; Alertflex project (OSS version) version 1.0.3 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Altprobe Installation" href="altprobe_install.html" />
+    <link rel="prev" title="Cnode Installation" href="cnode_install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Alertflex project (OSS version)
+          </a>
+              <div class="version">
+                version 1.0.3
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cnode_install.html">Cnode Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cnode Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configure-via-web-ui">Configure via Web UI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-via-console">Configure via Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#increase-as-payara-jvm-heap-size">Increase AS Payara JVM heap size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="altprobe_install.html">Altprobe Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="altprobe_config.html">Altprobe Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notices.html">Copyright notices</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Alertflex project (OSS version)</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Cnode Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/pages/cnode_config.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cnode-configuration">
+<h1>Cnode Configuration<a class="headerlink" href="#cnode-configuration" title="Permalink to this heading"></a></h1>
+<section id="configure-via-web-ui">
+<h2>Configure via Web UI<a class="headerlink" href="#configure-via-web-ui" title="Permalink to this heading"></a></h2>
+<p>To open the solution’s web landing page, open a web browser and type in the following URL: “<a class="reference external" href="http://hostname">http://hostname</a>” or “<a class="reference external" href="http://IP">http://IP</a> address” of the Central Node (Cnode). Replace “hostname” or “IP address” with the actual hostname or IP address of your Central Node.</p>
+<p>By accessing the web landing page, you will gain access to Swagger UI for Alertflex REST API and the administration consoles of Active MQ and Payara AS, which are components of the solution. These consoles provide administrative control and configuration options for managing the Alertflex Controller.</p>
+<img alt="../_images/landing_page.png" src="../_images/landing_page.png" />
+</section>
+<section id="configure-via-console">
+<h2>Configure via Console<a class="headerlink" href="#configure-via-console" title="Permalink to this heading"></a></h2>
+<p>The primary configuration file for the Alertflex controller is <code class="docutils literal notranslate"><span class="pre">project.properties</span></code>, located in the Project folder.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="c1"># Update project properties</span>
+ <span class="n">update_properties</span><span class="o">=</span><span class="mi">0</span>
+
+ <span class="c1"># Generate alerts based on status of findings: 1 - for all existing, 2 - for non confirmed, 3 - only for new</span>
+ <span class="n">alert_type</span><span class="o">=</span><span class="mi">3</span>
+ <span class="c1"># Set project parameters</span>
+ <span class="n">alert_timerange</span><span class="o">=</span><span class="mi">0</span>
+ <span class="n">node_timerange</span><span class="o">=</span><span class="mi">0</span>
+ <span class="n">posture_timerange</span><span class="o">=</span><span class="mi">0</span>
+ <span class="n">ioc_check</span><span class="o">=</span><span class="mi">0</span>
+
+ <span class="n">prometheus_stat</span><span class="o">=</span><span class="mi">0</span>
+ <span class="n">send_netflow</span><span class="o">=</span><span class="mi">0</span>
+ <span class="n">send_incident</span><span class="o">=</span><span class="mi">0</span>
+
+ <span class="c1"># Graylog</span>
+ <span class="n">graylog_host</span><span class="o">=</span>
+ <span class="n">graylog_port</span><span class="o">=</span><span class="mi">0</span>
+
+ <span class="c1"># ELK/OpenSearch log</span>
+ <span class="n">elk_host</span><span class="o">=</span>
+ <span class="n">elk_port</span><span class="o">=</span><span class="mi">9200</span>
+ <span class="n">elk_user</span><span class="o">=</span>
+ <span class="n">elk_pass</span><span class="o">=</span>
+ <span class="n">elk_storepass</span><span class="o">=</span>
+ <span class="n">elk_keystore</span><span class="o">=</span>
+<span class="n">elk_truststore</span><span class="o">=</span>
+
+ <span class="c1"># TheHive incidents</span>
+ <span class="n">hive_url</span><span class="o">=</span>
+ <span class="n">hive_key</span><span class="o">=</span>
+
+ <span class="c1"># GitLab incidents</span>
+ <span class="n">gitlab_url</span><span class="o">=</span>
+ <span class="n">gitlab_key</span><span class="o">=</span>
+
+ <span class="c1"># SonarQube</span>
+ <span class="n">sonar_url</span><span class="o">=</span>
+ <span class="n">sonar_user</span><span class="o">=</span>
+ <span class="n">sonar_pass</span><span class="o">=</span>
+
+ <span class="c1"># Dependency-track</span>
+ <span class="n">track_url</span><span class="o">=</span>
+ <span class="n">track_key</span><span class="o">=</span>
+ <span class="n">track_project</span><span class="o">=</span>
+ <span class="n">track_version</span><span class="o">=</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="increase-as-payara-jvm-heap-size">
+<h2>Increase AS Payara JVM heap size<a class="headerlink" href="#increase-as-payara-jvm-heap-size" title="Permalink to this heading"></a></h2>
+<p>By default, Payara Application server uses 512 MB of memory for JVM heap.
+This size of memory isn’t enough for the deployment of Alertflex, therefore the install script changes a JVM heap to 3 Gb memory.
+If your computer/virtual machine has more than 8 Gb memory, you can change JVM heap size by next commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo $GLASSFISH_PATH/bin/asadmin delete-jvm-options &#39;-Xms512m&#39;
+sudo $GLASSFISH_PATH/bin/asadmin delete-jvm-options &#39;-Xmx512m&#39;
+sudo $GLASSFISH_PATH/bin/asadmin create-jvm-options &#39;-Xms3g&#39;
+sudo $GLASSFISH_PATH/bin/asadmin create-jvm-options &#39;-Xmx3g&#39;
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Open ActiveMQ console <code class="docutils literal notranslate"><span class="pre">https://hostname/admin</span></code> (default user <code class="docutils literal notranslate"><span class="pre">admin</span></code>, password was set in <code class="docutils literal notranslate"><span class="pre">env.sh</span></code> file).</p></li>
+<li><p>Check messages in <strong>Queues</strong> panel, the amount of <strong>Messages Enqueued</strong> should be equal to the amount <strong>Messages Dequeued</strong>.</p></li>
+</ul>
+<img alt="../_images/activemq.png" src="../_images/activemq.png" />
+<ul class="simple">
+<li><p>Restart Payara server if required</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">payara_domain1</span> <span class="n">restart</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Check Payara server logs</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/opt/payara5/glassfish/domains/domain1/logs$ tail -f server.log
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cnode_install.html" class="btn btn-neutral float-left" title="Cnode Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="altprobe_install.html" class="btn btn-neutral float-right" title="Altprobe Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Oleg Zharkov.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

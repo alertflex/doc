@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation Altprobe &mdash; Alertflex project (OSS version) version 1.0.3 documentation</title>
+  <title>Altprobe Installation &mdash; Alertflex project (OSS version) version 1.0.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Copyright notices" href="notices.html" />
-    <link rel="prev" title="Installation Cnode" href="install_cnode.html" /> 
+    <link rel="next" title="Altprobe Configuration" href="altprobe_config.html" />
+    <link rel="prev" title="Cnode Configuration" href="cnode_config.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,12 +44,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_cnode.html">Installation Cnode</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation Altprobe</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="cnode_install.html">Cnode Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cnode_config.html">Cnode Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Altprobe Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="altprobe_config.html">Altprobe Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notices.html">Copyright notices</a></li>
 </ul>
 
@@ -67,9 +69,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Installation Altprobe</li>
+      <li>Altprobe Installation</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/pages/install_altprobe.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/pages/altprobe_install.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -77,15 +79,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="installation-altprobe">
-<h1>Installation Altprobe<a class="headerlink" href="#installation-altprobe" title="Permalink to this heading"></a></h1>
+  <section id="altprobe-installation">
+<h1>Altprobe Installation<a class="headerlink" href="#altprobe-installation" title="Permalink to this heading"></a></h1>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
-<p>Installation Altprobe was tested under Ubuntu version 18.04, 20.04, Centos 7, Amazon Linux 2. Memory at a computer/virtual machine must be not less than 2GB, Hard disk not less 20GB.</p>
-<p>Before starting this procedure, please install Cnode, after this you need to get file Broker.pem and value of project id, that is required for installation altprobe (see section “Post-installation” of configuration cnode).</p>
+<p>The installation of Altprobe has been tested on Ubuntu versions 18.04 and 20.04, CentOS 7, and Amazon Linux 2. For the computer or virtual machine where Altprobe will be installed, it is recommended to have a minimum of 2GB of memory and a hard disk capacity of at least 20GB.</p>
+<p>Before proceeding with the installation procedure, please make sure that you have already installed Cnode. Additionally, you will need to obtain the “Broker.pem” file and the project ID value, which are required for the Altprobe installation.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -100,18 +102,30 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Fill in Altprobe specific parameters in the <code class="docutils literal notranslate"><span class="pre">env.sh</span></code> file, as an example use the file <code class="docutils literal notranslate"><span class="pre">env_example.sh</span></code>. If you are planning to install Altprobe on the Cnode compute (Appliance configuration) use as example file <code class="docutils literal notranslate"><span class="pre">env_local.sh</span></code>.</p></li>
-<li><p>Start installation.</p></li>
+<li><p>Fill in the Altprobe specific parameters in the <code class="docutils literal notranslate"><span class="pre">env.sh</span></code> file. You can use the provided example file <code class="docutils literal notranslate"><span class="pre">env_example.sh</span></code> as a reference. If you are planning to install Altprobe on the Cnode as an Appliance configuration, use the example file <code class="docutils literal notranslate"><span class="pre">env_appliance.sh</span></code>.</p></li>
+<li><p>Start the installation process by running the next commands:</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="n">u</span><span class="o">+</span><span class="n">x</span> <span class="n">install_from_source_ubuntu20</span><span class="o">.</span><span class="n">sh</span>
 <span class="o">./</span><span class="n">install_from_source_ubuntu20</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
+<p>After completing the software installation, follow these steps:</p>
 <ul class="simple">
-<li><p>After finish a software installation, make a copy of file <code class="docutils literal notranslate"><span class="pre">Broker.pem</span></code> to directory <code class="docutils literal notranslate"><span class="pre">/etc/altprobe/</span></code></p></li>
-<li><p>Reboot system and after that check status of Altprobe</p></li>
+<li><p>Make a copy of the file “Broker.pem” to the directory “/etc/altprobe/”. You can do this by running the following command:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@host</span><span class="p">:</span><span class="o">~</span><span class="c1"># altprobe-status</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">cp</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">Broker</span><span class="o">.</span><span class="n">pem</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">altprobe</span><span class="o">/</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Reboot the system to ensure that all changes take effect. You can reboot the system by running the following command:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">reboot</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Check the status of Altprobe to verify that it is running correctly:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">altprobe</span><span class="o">-</span><span class="n">status</span>
 </pre></div>
 </div>
 </section>
@@ -121,8 +135,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="install_cnode.html" class="btn btn-neutral float-left" title="Installation Cnode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="notices.html" class="btn btn-neutral float-right" title="Copyright notices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cnode_config.html" class="btn btn-neutral float-left" title="Cnode Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="altprobe_config.html" class="btn btn-neutral float-right" title="Altprobe Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

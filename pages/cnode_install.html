@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation Cnode &mdash; Alertflex project (OSS version) version 1.0.3 documentation</title>
+  <title>Cnode Installation &mdash; Alertflex project (OSS version) version 1.0.3 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installation Altprobe" href="install_altprobe.html" />
+    <link rel="next" title="Cnode Configuration" href="cnode_config.html" />
     <link rel="prev" title="Architecture" href="architecture.html" /> 
 </head>
 
@@ -44,12 +44,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation Cnode</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cnode Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="install_altprobe.html">Installation Altprobe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cnode_config.html">Cnode Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="altprobe_install.html">Altprobe Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="altprobe_config.html">Altprobe Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notices.html">Copyright notices</a></li>
 </ul>
 
@@ -67,9 +69,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Installation Cnode</li>
+      <li>Cnode Installation</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/pages/install_cnode.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/pages/cnode_install.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -77,14 +79,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="installation-cnode">
-<h1>Installation Cnode<a class="headerlink" href="#installation-cnode" title="Permalink to this heading"></a></h1>
+  <section id="cnode-installation">
+<h1>Cnode Installation<a class="headerlink" href="#cnode-installation" title="Permalink to this heading"></a></h1>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
-<p>Installation of the Central node was tested under Ubuntu version 20.04. The Memory of a computer/virtual machine for installation the Central node must be not less than 8GB (16GB and high recommended), Hard disk not less than 40GB. Also, the computer should be reachable for remote components of the solution via hostname (see file /etc/hosts or DNS service). Next TCP/UDP ports should be open for interaction between solution components and users:</p>
+<p>Installation of the central node has been tested on Ubuntu version 20.04. To install the central node, it is recommended to have a computer or virtual machine with a minimum of 8GB of memory (16GB or higher is recommended) and a hard disk capacity of at least 40GB.</p>
+<p>Additionally, the computer or virtual machine should be reachable by the remote components of the solution using a hostname. You can configure this either through the “/etc/hosts” file or a DNS service to ensure proper communication.</p>
+<p>Furthermore, certain TCP/UDP ports need to be open to facilitate interaction between the solution components and users. Please ensure that the following ports are open:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 18%" />
@@ -98,23 +102,27 @@
 </tr>
 <tr class="row-even"><td><p>22</p></td>
 <td><p>SSH</p></td>
-<td><p>linux console</p></td>
+<td><p>Linux console</p></td>
 </tr>
-<tr class="row-odd"><td><p>443</p></td>
+<tr class="row-odd"><td><p>80</p></td>
 <td><p>Alertflex</p></td>
-<td><p>web console</p></td>
+<td><p>Web console (Swagger UI)</p></td>
 </tr>
 <tr class="row-even"><td><p>1514</p></td>
 <td><p>Wazuh</p></td>
-<td><p>wazuh agent (only for appliance)</p></td>
+<td><p>Wazuh agent (only for appliance)</p></td>
 </tr>
-<tr class="row-odd"><td><p>8443</p></td>
-<td><p>MISP</p></td>
-<td><p>admin ui (optional)</p></td>
+<tr class="row-odd"><td><p>4848</p></td>
+<td><p>Payara AS</p></td>
+<td><p>Admin UI</p></td>
 </tr>
-<tr class="row-even"><td><p>61617</p></td>
-<td><p>ActiveMQ</p></td>
-<td><p>altprobe (for remote collectors)</p></td>
+<tr class="row-even"><td><p>8080</p></td>
+<td><p>Alertflex</p></td>
+<td><p>REST API</p></td>
+</tr>
+<tr class="row-odd"><td><p>61617</p></td>
+<td><p>Active MQ</p></td>
+<td><p>Altprobe (for remote collectors)</p></td>
 </tr>
 </tbody>
 </table>
@@ -132,7 +140,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Fill in project-specific parameters in file <code class="docutils literal notranslate"><span class="pre">env.sh</span></code>, as an example you can use file <code class="docutils literal notranslate"><span class="pre">example_env.sh</span></code></p></li>
+<li><p>Fill in project-specific parameters in file <code class="docutils literal notranslate"><span class="pre">env.sh</span></code>, as an example you can use file <code class="docutils literal notranslate"><span class="pre">example_env.sh</span></code> or <code class="docutils literal notranslate"><span class="pre">env_appliance.sh</span></code></p></li>
 <li><p>Start installation</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="n">u</span><span class="o">+</span><span class="n">x</span> <span class="n">install_ubuntu20</span><span class="o">.</span><span class="n">sh</span>
@@ -140,7 +148,11 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>After finish a software installation, reboot the system</p></li>
+<li><p>After finish a software installation, write down the project id and keep the file <code class="docutils literal notranslate"><span class="pre">Broker.pem</span></code></p></li>
+</ul>
+<img alt="../_images/id_pem.png" src="../_images/id_pem.png" />
+<ul class="simple">
+<li><p>reboot the system</p></li>
 </ul>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -153,7 +165,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="architecture.html" class="btn btn-neutral float-left" title="Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="install_altprobe.html" class="btn btn-neutral float-right" title="Installation Altprobe" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cnode_config.html" class="btn btn-neutral float-right" title="Cnode Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

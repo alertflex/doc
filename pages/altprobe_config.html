@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Altprobe Configuration &mdash; Alertflex project (OSS version) version 1.0.3 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Copyright notices" href="notices.html" />
+    <link rel="prev" title="Altprobe Installation" href="altprobe_install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Alertflex project (OSS version)
+          </a>
+              <div class="version">
+                version 1.0.3
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cnode_install.html">Cnode Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cnode_config.html">Cnode Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="altprobe_install.html">Altprobe Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Altprobe Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#scanners-and-sensors-configuration">Scanners and sensors configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filtering-policies">Filtering policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#altprobe-commands">Altprobe commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notices.html">Copyright notices</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Alertflex project (OSS version)</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Altprobe Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/pages/altprobe_config.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="altprobe-configuration">
+<h1>Altprobe Configuration<a class="headerlink" href="#altprobe-configuration" title="Permalink to this heading"></a></h1>
+<p>The primary configuration file for the Alertflex collector/runner is <code class="docutils literal notranslate"><span class="pre">altprobe.yaml</span></code>, located in the <code class="docutils literal notranslate"><span class="pre">/etc/altprobe/</span></code> folder.
+It serves as the central point for configuring the collector. One crucial section within this file is the “controller” section.
+It contains several parameters responsible for communication between the Collector and the Controller.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">controller</span><span class="p">:</span><span class="w"></span>
+<span class="c1"># Send alerts and statistics to Central Node (ActiveMQ interface)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_amq_url&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_amq_user&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">pwd</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_amq_pwd&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cert</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_amq_cert&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cert_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_cert_verify&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_amq_key&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">key_pwd</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_key_pwd&quot;</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="scanners-and-sensors-configuration">
+<h2>Scanners and sensors configuration<a class="headerlink" href="#scanners-and-sensors-configuration" title="Permalink to this heading"></a></h2>
+<p>Also, the configuration file <code class="docutils literal notranslate"><span class="pre">altprobe.yaml</span></code> includes several parameters for different types of security scanners and sensors
+that allow integration of their configurations, reports, and log files into the solution.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">scanners</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># second project id only for posture tasks</span><span class="w"></span>
+<span class="w">  </span><span class="nt">project_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;indef&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Path to scanner result file</span><span class="w"></span>
+<span class="w">  </span><span class="nt">result_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_result_path&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Path to trivy scanner executable file, if value is indef trivy scan disabled</span><span class="w"></span>
+<span class="w">  </span><span class="nt">trivy_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_trivy_path&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Path to kube-hunter scanner executable file, if value is indef kube-hunter scan disabled</span><span class="w"></span>
+<span class="w">  </span><span class="nt">kubehunter_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;indef&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Path to nmap scanner scanner executable file, if value is indef nmap scan disabled</span><span class="w"></span>
+<span class="w">  </span><span class="nt">nmap_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;indef&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Path to nuclei scanner executable file, if value is indef nuclei scan disabled</span><span class="w"></span>
+<span class="w">  </span><span class="nt">nuclei_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;indef&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Path to nikto scanner executable file, if value is indef nikto scan disabled</span><span class="w"></span>
+<span class="w">  </span><span class="nt">nikto_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;indef&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Path to zap scanner executable file (or path to docker), if value is indef zap scan disabled</span><span class="w"></span>
+<span class="w">  </span><span class="nt">zap_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;indef&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Path to cloudsploit scanner executable file (or path to docker), if value is indef cloudsploit scan disabled</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cloudsploit_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;indef&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Path to semgrep scanner executable file (or path to docker), if value is indef semgrep scan disabled</span><span class="w"></span>
+<span class="w">  </span><span class="nt">semgrep_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;indef&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Path to scanned project, if value is indef sonarqube scan disabled</span><span class="w"></span>
+<span class="w">  </span><span class="nt">sonarqube_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;indef&quot;</span><span class="w"></span>
+
+<span class="nt">sensors</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Altprobe can read falco, suricata, wazuh events directly from log files.</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># If xxx_log is &quot;indef&quot; redis interface is used. In case xxx_redis is &quot;indef&quot;, module is not in use</span><span class="w"></span>
+<span class="w">  </span><span class="nt">falco_log</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_falco_log&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">falco_redis</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;altprobe_crs&quot;</span><span class="w"></span>
+
+<span class="w">  </span><span class="nt">modsec_log</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_modsec_log&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">modsec_redis</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;altprobe_waf&quot;</span><span class="w"></span>
+
+<span class="w">  </span><span class="nt">suri_log</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_suri_log&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">suri_redis</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;altprobe_nids&quot;</span><span class="w"></span>
+
+<span class="w">  </span><span class="nt">wazuh_log</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;_wazuh_log&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">wazuh_redis</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;altprobe_hids&quot;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># For reading events from AWS WAF (only Redis interface)</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># in case value &quot;indef&quot;, module is not in use</span><span class="w"></span>
+<span class="w">  </span><span class="nt">awswaf_redis</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;altprobe_awswaf&quot;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># For reading events from altprobe&#39;s custom sources (only Redis interface)</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># in case value &quot;indef&quot;, module is not in use</span><span class="w"></span>
+<span class="w">  </span><span class="nt">misc_redis</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;altprobe_misc&quot;</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="filtering-policies">
+<h2>Filtering policies<a class="headerlink" href="#filtering-policies" title="Permalink to this heading"></a></h2>
+<p>Next important configuration file is <code class="docutils literal notranslate"><span class="pre">filters.json</span></code> in folder <code class="docutils literal notranslate"><span class="pre">/etc/altprobe/</span></code>. It consists filtering policy in JSON format,
+that describer operations such as alert aggregation, modification, whitelist and blacklist.
+Alertflex collector (Altprobe) applies the policy for every new event that comes to the system.
+Below, example part of the filtering policy for Wazuh alerts:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nt">&quot;hids&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;log&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;severity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;level0&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;level1&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;level2&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;gray_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5715&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;agent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;flghost&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;match&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;indef&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;aggregate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;reproduced&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;in_period&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;response&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;indef&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;new_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;indef&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;new_source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;indef&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;new_event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;55715&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;new_severity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;new_category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cat for 55715&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;new_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;desc for 55715&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>In the example above, the gray list consists of a policy for the event with ID 5715 (Wazuh classification).
+When an event with such ID comes to Altprobe from Wazuh, the following actions are applied to the event:</p>
+<ul class="simple">
+<li><p>The event ID will be modified to 55715.</p></li>
+<li><p>The severity level for the alert will be changed to 1.</p></li>
+<li><p>A new category, “cat for 55715,” will be added to the alert.</p></li>
+<li><p>The description of the alert will be modified to “desc for 55715.”</p></li>
+</ul>
+<p>The filtering policy is loaded during the start of Altprobe from the file <code class="docutils literal notranslate"><span class="pre">filter.json</span></code>. Additionally, the filtering policy can be dynamically changed
+and loaded to collectors from the central node via the Alertflex REST API.</p>
+<p>The collector establishes three main outgoing streams to the controller:</p>
+<ul class="simple">
+<li><p>Normalized security alerts.</p></li>
+<li><p>Scanners reports that were initiated from the Cnode (central node) side using the REST API.</p></li>
+<li><p>Stream of compressed security events and Netflow for further processing, such as Threat Intelligence tasks and routing to external Log Management systems.</p></li>
+</ul>
+<p>Using filtering policies, it is possible to manage routing to external Log Management systems. Use the boolean field <code class="docutils literal notranslate"><span class="pre">log</span></code> located under the sensor type to set up routing to Threat Intelligence processing and Log Management systems.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="altprobe-commands">
+<h2>Altprobe commands<a class="headerlink" href="#altprobe-commands" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">altprobe</span><span class="o">-</span><span class="n">start</span>
+<span class="n">altprobe</span><span class="o">-</span><span class="n">stop</span>
+<span class="n">altprobe</span><span class="o">-</span><span class="n">restart</span>
+<span class="n">altprobe</span><span class="o">-</span><span class="n">status</span>
+</pre></div>
+</div>
+<p>Below, example usage of Altpobe commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@host</span><span class="p">:</span><span class="o">~</span><span class="c1"># altprobe-status</span>
+
+<span class="n">alertflex</span> <span class="n">collector</span> <span class="n">isn</span><span class="s1">&#39;t running</span>
+
+<span class="n">suricata</span> <span class="n">start</span><span class="o">/</span><span class="n">running</span><span class="p">,</span> <span class="n">process</span> <span class="mi">1797</span>
+
+<span class="n">ossec</span><span class="o">-</span><span class="n">monitord</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">logcollector</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">remoted</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">syscheckd</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">analysisd</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">maild</span> <span class="ow">not</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">execd</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">wazuh</span><span class="o">-</span><span class="n">modulesd</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+
+<span class="n">root</span><span class="nd">@host</span><span class="p">:</span><span class="o">~</span><span class="c1"># altprobe-start</span>
+<span class="n">alertflex</span> <span class="n">collector</span> <span class="n">started</span> <span class="k">with</span> <span class="n">code</span> <span class="mi">0</span>
+<span class="n">root</span><span class="nd">@host</span><span class="p">:</span><span class="o">~</span><span class="c1">#</span>
+
+<span class="n">root</span><span class="nd">@host</span><span class="p">:</span><span class="o">~</span><span class="c1"># altprobe-status</span>
+
+<span class="n">alertflex</span> <span class="n">collector</span> <span class="ow">is</span> <span class="n">running</span><span class="p">,</span> <span class="n">process</span> <span class="mi">19023</span>
+
+<span class="n">suricata</span> <span class="n">start</span><span class="o">/</span><span class="n">running</span><span class="p">,</span> <span class="n">process</span> <span class="mi">1797</span>
+
+<span class="n">ossec</span><span class="o">-</span><span class="n">monitord</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">logcollector</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">remoted</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">syscheckd</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">analysisd</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">maild</span> <span class="ow">not</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">execd</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">wazuh</span><span class="o">-</span><span class="n">modulesd</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>How to check an Altprobe errors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">syslog</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">altprobe</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="altprobe_install.html" class="btn btn-neutral float-left" title="Altprobe Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="notices.html" class="btn btn-neutral float-right" title="Copyright notices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Oleg Zharkov.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
