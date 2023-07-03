@@ -46,14 +46,15 @@
 <li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cnode_install.html">Cnode Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Cnode Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#configure-via-web-ui">Configure via Web UI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configure-via-console">Configure via Console</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configure-via-web-ui">Configure via Web UI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#increase-as-payara-jvm-heap-size">Increase AS Payara JVM heap size</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="altprobe_install.html">Altprobe Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="altprobe_config.html">Altprobe Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_api.html">Using an API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notices.html">Copyright notices</a></li>
 </ul>
 
@@ -83,17 +84,15 @@
              
   <section id="cnode-configuration">
 <h1>Cnode Configuration<a class="headerlink" href="#cnode-configuration" title="Permalink to this heading"></a></h1>
-<section id="configure-via-web-ui">
-<h2>Configure via Web UI<a class="headerlink" href="#configure-via-web-ui" title="Permalink to this heading"></a></h2>
-<p>To open the solution’s web landing page, open a web browser and type in the following URL: “<a class="reference external" href="http://hostname">http://hostname</a>” or “<a class="reference external" href="http://IP">http://IP</a> address” of the Central Node (Cnode). Replace “hostname” or “IP address” with the actual hostname or IP address of your Central Node.</p>
-<p>By accessing the web landing page, you will gain access to Swagger UI for Alertflex REST API and the administration consoles of Active MQ and Payara AS, which are components of the solution. These consoles provide administrative control and configuration options for managing the Alertflex Controller.</p>
-<img alt="../_images/landing_page.png" src="../_images/landing_page.png" />
-</section>
 <section id="configure-via-console">
 <h2>Configure via Console<a class="headerlink" href="#configure-via-console" title="Permalink to this heading"></a></h2>
-<p>The primary configuration file for the Alertflex controller is <code class="docutils literal notranslate"><span class="pre">project.properties</span></code>, located in the Project folder.</p>
+<p>The primary configuration file for the Alertflex controller is <code class="docutils literal notranslate"><span class="pre">project.properties</span></code>, located in the Project folder.
+This config file is loaded by the Controller during startup, and if you have made any changes to the parameters,
+you will need to restart the Controller. Please refer to the “Troubleshooting” section on this page for instructions
+on how to restart the Controller. Additionally, to enable the use of <code class="docutils literal notranslate"><span class="pre">project.properties</span></code>, you should set the value of the field <code class="docutils literal notranslate"><span class="pre">update_properties</span></code> to 1.</p>
+<p>Below example of <code class="docutils literal notranslate"><span class="pre">project.properties</span></code> file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="c1"># Update project properties</span>
- <span class="n">update_properties</span><span class="o">=</span><span class="mi">0</span>
+ <span class="n">update_properties</span><span class="o">=</span><span class="mi">1</span>
 
  <span class="c1"># Generate alerts based on status of findings: 1 - for all existing, 2 - for non confirmed, 3 - only for new</span>
  <span class="n">alert_type</span><span class="o">=</span><span class="mi">3</span>
@@ -144,6 +143,15 @@
 <div class="line"><br /></div>
 </div>
 </section>
+<section id="configure-via-web-ui">
+<h2>Configure via Web UI<a class="headerlink" href="#configure-via-web-ui" title="Permalink to this heading"></a></h2>
+<p>To open the solution’s web landing page, open a web browser and type in the following URL: “<a class="reference external" href="http://hostname">http://hostname</a>” or “<a class="reference external" href="http://IP">http://IP</a> address” of the Central Node (Cnode). Replace “hostname” or “IP address” with the actual hostname or IP address of your Central Node.</p>
+<p>By accessing the web landing page, you will gain access to Swagger UI for Alertflex REST API and the administration consoles of Active MQ and Payara AS, which are components of the solution. These consoles provide administrative control and configuration options for managing the Alertflex Controller.</p>
+<img alt="../_images/landing_page.png" src="../_images/landing_page.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
 <section id="increase-as-payara-jvm-heap-size">
 <h2>Increase AS Payara JVM heap size<a class="headerlink" href="#increase-as-payara-jvm-heap-size" title="Permalink to this heading"></a></h2>
 <p>By default, Payara Application server uses 512 MB of memory for JVM heap.
@@ -162,18 +170,18 @@ sudo $GLASSFISH_PATH/bin/asadmin create-jvm-options &#39;-Xmx3g&#39;
 <section id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p>Open ActiveMQ console <code class="docutils literal notranslate"><span class="pre">https://hostname/admin</span></code> (default user <code class="docutils literal notranslate"><span class="pre">admin</span></code>, password was set in <code class="docutils literal notranslate"><span class="pre">env.sh</span></code> file).</p></li>
+<li><p>Open ActiveMQ console <code class="docutils literal notranslate"><span class="pre">https://hostname/admin</span></code> (The default username is admin, and the password is set in the env.sh file.).</p></li>
 <li><p>Check messages in <strong>Queues</strong> panel, the amount of <strong>Messages Enqueued</strong> should be equal to the amount <strong>Messages Dequeued</strong>.</p></li>
 </ul>
 <img alt="../_images/activemq.png" src="../_images/activemq.png" />
 <ul class="simple">
-<li><p>Restart Payara server if required</p></li>
+<li><p>Restart the Payara server/Controller if necessary (The default username is admin, and the password is set in the env.sh file).</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">payara_domain1</span> <span class="n">restart</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Check Payara server logs</p></li>
+<li><p>Check Payara server/Controller logs</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/opt/payara5/glassfish/domains/domain1/logs$ tail -f server.log
 </pre></div>
