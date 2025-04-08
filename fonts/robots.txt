@@ -1,0 +1,8 @@
+# Robots.txt file 
+# For domain: https://alertflex.org
+
+# main section
+User-agent: *
+Disallow: /img/
+
+Sitemap: https://alertflex.org/sitemap.xml

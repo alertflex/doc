@@ -2,13 +2,26 @@
 <html lang="en">
   <head>
   
-	<meta charset="utf-8"/>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-77081853-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+        gtag('config', 'UA-77081853-1');
+	</script>
+		
+    <meta charset="utf-8"/>
 	
 	<title>Alertflex | Orchestration Solution</title>
     
 	<meta name="description" content="Alertflex is an open source solution for continuous monitoring and orchestration.">
 	
-	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<meta name="google-site-verification" content="TsbkqUA159z1EBgm6fBO6z3LdzvojGciFB3yHm2SWEY" />
+	
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	
+	<link rel="canonical" href="https://alertflex.org/" />
 	
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
 	<link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -20,7 +33,12 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top" >
+    <!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLL949K"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	
+	<nav class="navbar navbar-default navbar-fixed-top" >
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -35,15 +53,16 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right" >
-					<li><a href="#contact"><span class="fa fa-envelope"></span> CONTACT</a></li>
+					<li><a href="#download"><span class="fa fa-download"></span> DOWNLOAD</a></li>
 					<li><a href="#features" class="nav-link"><span class="fa fa-shopping-cart"></span> FEATURES</a></li>
+					<li><a href="#integrations" class="nav-link"><span class="fa fa-th-large"></span> INTEGRATIONS</a></li>
 				</ul>
 			</div> <!-- /.navbar-collapse -->
 		</div> <!-- /.container -->
     </nav> <!-- /.navbar -->
 	
 	<div id="home" class="jumbotron">
-        <section id="portfolio" style="margin-top:30px;">
+        <section id="portfolio" style="margin-top:20px;">
 			<div class="container" >
 				<div class="col-md-12" style="margin-top:20px; padding-bottom:50px">
 					<h1 style="color:#000; font-size: 24px; ">Bridging the gap between web services monitoring and testing</h1>
@@ -60,7 +79,7 @@
 							<img src="img/icons/filters.png" alt="Alert triage">
 						</a>
 						<div style="padding-top:10px;" class="functional">
-							<h2 >Alert triage: normalization, prioritization, and confirmation</h2> 
+							<h2 >Alert Triage: Normalization, Prioritization, and Confirmation</h2> 
 						</div>
 					</div>
 					<div class="col-sm-6 portfolio-item">
@@ -73,11 +92,9 @@
 							<img src="img/icons/analytics.png" alt="free open source IDS, vulnerabilities scaner tools">
 						</a>
 						<div style="padding-top:10px; " class="functional">
-							<h2 >Detection of bugs, threats, and vulnerabilities</h2> 
+							<h2 >Detection of Bugs, Threats, and Vulnerabilities</h2> 
 						</div>
 					</div>
-				<div >
-				<div class="row">
 					<div class="col-sm-6 portfolio-item">
 						<a href="#" class="portfolio-link" >
 							<div class="caption">
@@ -88,7 +105,7 @@
 							<img src="img/icons/union.png" alt="integration with Host IDS, Network IDS">
 						</a>
 						<div style="padding-top:10px; " class="functional">
-							<h2 >Integrated analysis of containers, hosts, and networks</h2> 
+							<h2 >Integrated analysis of Containers, Hosts, and Networks</h2> 
 						</div>
 					</div>
 					<div class="col-sm-6 portfolio-item">
@@ -98,10 +115,10 @@
 									<i class="fa fa-search-plus fa-3x"></i>
 								</div>
 							</div>
-							<img src="img/icons/robot.png" alt="free open source DevSecOps orchestration">
+							<img src="img/icons/robot.png" alt="open source DevSecOps orchestration">
 						</a>
 						<div style="padding-top:10px;" class="functional">
-							<h2 >DevSecOps orchestration</h2> 
+							<h2 >DevSecOps Orchestration</h2> 
 						</div>
 					</div>
 				</div>
@@ -110,46 +127,161 @@
     </div> <!-- /.jumbotron -->
 	
 	<div id="demo" class="container" >
-		<div class="col-md-12" style="padding-bottom:30px;" >
-			<p style="margin-top:10px; ">Alertflex acts as an orchestrator for a distributed grid of DAST/TAF scanners and HIDS/NIDS sensors. It helps software teams quickly implement DAST in CD/GitOps processes, enables analytics and observability of detected information using OpenSearch.</p>
+		<div class="col-md-12" style="padding-bottom:30px; text-align: left" >
+			<p> Alertflex orchestrates a distributed grid of open-source tools, including DAST/TAF scanners and Host/Network observability sensors. It automates testing and monitoring, seamless integrates them into CI/CD workflows.</p>
 		</div>
-		<div class="container" style="text-align: center">
-			<img src="img/arch.png" alt="slide0" >
+		<div class="container" style="padding-bottom:60px; text-align: center">
+			<img src="img/arch.png" width="60%" height="60%">
 		</div>
 	</div>
 	
-	<div id="contact" class="container-alternate" style="padding-bottom:50px; padding-top:50px;">
-		<div class="container contact_info">
-			<p >If you have a question or need tech support, or consulting, please send an email to the contact address <a id="github_link" href="mailto:info@alertflex.org"><i class="fa fa-envelope"></i> info@alertflex.org</a></p>
+	<div id="download" class="container" style="padding-bottom:60px; padding-top:60px;">
+		<div class="container contact_info" style="text-align: left">
+			<p >The Alterflex project's source code is partially available as open-source on GitHub under the Apache License, Version 2.0. Additionally, the Alertflex Management Console is provided as a pre-built executable binary for easy deployment.</p>
+			<p >If you have further questions about project downloads and contributions, or technical support, please contact us via email at <a id="github_link" href="mailto:info@alertflex.org"><i class="fa fa-envelope"></i> info@alertflex.org</a><p> 
 		</div>
-    </div> <!-- /.container -->
+	</div> <!-- /.container -->
 	
-	<div id="features" class="container" style="padding-bottom:10px; padding-top:10px; ">
+	<div id="features" class="container" style="padding-bottom:60px; padding-top:60px; ">
 			<div class="row" >
-    			
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				
-					<!-- PRICE ITEM -->
-					<div class="panel price panel-grey">
+    			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="panel price panel-white">
 						<div class="panel-heading arrow_box text-center">
-						<h3 style="color:#fff;">Alertflex features</h3>
+							<h3 style="color:#000;">Core features</h3>
 						</div>
 						<ul class="list-group list-group-flush text-left">
-							<li class="list-group-item h2-emul"><p><i style="color: #68a1b2;" ></i>  Testing and monitoring a complex web services infrastructure, not just the web application itself</p></li>
-							<li class="list-group-item h2-emul"><p><i style="color: #68a1b2;" ></i>  A unified report for multiple remote scans, including alerts summary from scanners and sensors, serving as a quality gate</p></li>
-							<li class="list-group-item h2-emul"><p><i style="color: #68a1b2;" ></i>  Several correlation methods for scan findings, along with rules for logging and dismissing alerts</p></li>
-							<li class="list-group-item h2-emul"><p><i style="color: #68a1b2;" ></i>  Using IDS sensors to monitor system events and detect hidden bugs</p></li>
-							<li class="list-group-item h2-emul"><p><i style="color: #68a1b2;" ></i>  Selective logging and inspecting HTTP traffic, along with auto-indexing visited pages of web-services</p></li>
-							<li class="list-group-item h2-emul"><p><i style="color: #68a1b2;" ></i>  Converting IDS events to OCSF format, suited for the security analytics and threat intelligence functions of OpenSearch</p></li>
-							<li class="list-group-item h2-emul"><p><i style="color: #68a1b2;" ></i>  Exporting alerts to external issue trackers and unified posture reports to external CI/CD tools</p></li>
-							<li class="list-group-item h2-emul"><p><i style="color: #68a1b2;" ></i>  Asynchronous, non-blocking scans triggered by API calls in external CI/CD pipelines</p></li>
-							<li class="list-group-item h2-emul"><p><i style="color: #68a1b2;" ></i>  Seamless connectivity between central management and remote collectors/runners</p></li>
+							<li class="list-group-item h2-emul"><p> A dedicated pipeline per project to automate scan scenarios, using a GitHub Actions-like workflow structure</p></li>
+							<li class="list-group-item h2-emul"><p> Asynchronously trigger a pipeline via API to execute multiple scan tools and import their output reports</p></li>
+							<li class="list-group-item h2-emul"><p> Pipeline status reports with Quality Gate controls, based on scanner and sensor alerts</p></li>
+							<li class="list-group-item h2-emul"><p> Consolidated pipeline reports in CI/CD-friendly formats (JUnit XML, SARIF), including detailed scan findings</p></li>
+							<li class="list-group-item h2-emul"><p> Multiple correlation methods for scan findings, along with configurable rules for logging and alert dismissal</p></li>
+							<li class="list-group-item h2-emul"><p> Using sensors for Out-of-Band Application Security Testing (OAST) to detect blind vulnerabilities</p></li>
+							<li class="list-group-item h2-emul"><p> Converting sensor events to OCSF format for advanced security analysis and threat intelligence</p></li>
+							<li class="list-group-item h2-emul"><p> External Integration Hub – supports Alert-to-Issue conversion and automatic Alert notifications</p></li>
 						</ul>
 					</div>
-					<!-- /PRICE ITEM -->
 				</div>
 			</div>
     </div> <!-- /.container -->
+	
+	<div id="integrations" class="container" style="padding-bottom:30px; padding-top:30px;">
+		<div class="container">
+			<div class="row">
+			
+				<div class="col-md-12 contact_info" style="padding-bottom:30px; ">
+					<div style="text-align: center" >
+						<p style="font-size: 16px;" >Alertflex integrates multiple tools to improve application and infrastructure through centralized testing and observability</p>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/falco.jpg" alt="integration with Falco">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Falco</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/suricata.jpg" alt="integration with Suricata">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Suricata</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/hubble.jpg" alt="integration with Hubble">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Hubble</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/zap.jpg" alt="integration with ZAP">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">ZAP</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/nuclei.jpg" alt="integration with Nuclei">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Nuclei</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/pytest.jpg" alt="integration with Pytest">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Pytest</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/opensearch.jpg" alt="integration with OpenSearch">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">OpenSearch</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/gitea.jpg" alt="integration with Gitea">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Gitea</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/gitlab.jpg" alt="integration with Gitlab">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Gitlab</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/azure-devops.jpg" alt="integration with Azure DevOps">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Azure DevOps</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/jira.jpg" alt="integration with JIRA">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">JIRA</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/github.jpg" alt="integration with Github">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Github</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/telegram.jpg" alt="integration with Telegram">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Telegram</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/discord.jpg" alt="integration with Discord">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Discord</h2>
+					</div>
+				</div>
+				
+				<div class="col-sm-4">
+					<img class="card-img-top" src="img/logos/mailgun.jpg" alt="integration with Mailgun">
+					<div class="card-body">
+						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Mailgun</h2>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
 	
 	<footer>
         <div class="container" id="footer" style="margin-top:5px; margin-bottom:5px;">
@@ -162,13 +294,14 @@
 				                
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
-						<li><a href="https://discord.gg/wDSz7rDMWv" ><span class="fab fa-discord fa-2x"></span></a></li>
+						<li><a href="https://t.me/alertflex" ><span class="fab fa-discord fa-2x"></span></a></li>
                         <li><a href="https://github.com/alertflex" ><span class="fab fa-github fa-2x"></span></a></li>
+						<li><a href="https://t.me/alertflex" ><span class="fab fa-telegram fa-2x"></span></a></li>
 					</ul>
                 </div>
 				                
                 <div class="col-md-4">
-                    <span class="copyright" style="color: #fff;"><i class="fa fa-copyright"></i> 2017-2025, Oleg Zharkov </span>
+                    <span class="copyright" style="color: #fff;"><i class="fa fa-copyright"></i> 2025, Oleg Zharkov </span>
 				</div>
             </div>
             

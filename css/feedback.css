@@ -16,7 +16,7 @@
   text-align: center;
   width: 120px;
   height: 42px;
-  background-color: #288BCC;
+  background-color: #A9A9A9;
   margin-top: 60px;
   margin-left: -42px;
   padding-top: 5px;
@@ -30,5 +30,5 @@
   transform: rotate(90deg);
 }
 
-#feedback-tab:hover { background-color: #206FD6; }
+#feedback-tab:hover { background-color: #288BCC; }
 
