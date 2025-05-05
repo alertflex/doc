@@ -1,305 +1,333 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-  <head>
-  
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-77081853-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-        gtag('config', 'UA-77081853-1');
-	</script>
-		
-    <meta charset="utf-8"/>
-	
-	<title>Alertflex | Orchestration Solution</title>
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <title>Alertflex | DevSecOps Orchestration Platform</title>
+    <meta name="description" content="Alertflex bridges monitoring and testing with AI-powered orchestration for secure web services">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-	<meta name="description" content="Alertflex is an open source solution for continuous monitoring and orchestration.">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77081853-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-77081853-1');
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/alertflex.ico">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	
-	<meta name="google-site-verification" content="TsbkqUA159z1EBgm6fBO6z3LdzvojGciFB3yHm2SWEY" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" >
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
 	
-    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-	
-	<link rel="canonical" href="https://alertflex.org/" />
-	
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
-	<link href="css/bootstrap.min.css" rel="stylesheet"/>
-	<link href="css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="css/feedback.css" rel="stylesheet"/>
-	<link href="css/style.css" rel="stylesheet"/>
-    <link rel="icon" href="img/alertflex.ico"/>
-    <link rel="shortcut icon" href="img/alertflex.ico"/>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  </head>
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLL949K"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-	
-	<nav class="navbar navbar-default navbar-fixed-top" >
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#"> <img alt="ALERTFLEX" style="max-width:120px; margin-top: -12px;"  src="img/logo.png" /></a>
-			</div> <!-- /.navbar-header -->
-			
-			
-
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right" >
-					<li><a href="#download"><span class="fa fa-download"></span> DOWNLOAD</a></li>
-					<li><a href="#integrations" class="nav-link"><span class="fa fa-th-large"></span> INTEGRATIONS</a></li>
-				</ul>
-			</div> <!-- /.navbar-collapse -->
-		</div> <!-- /.container -->
-    </nav> <!-- /.navbar -->
-	
-	<div id="home" class="jumbotron">
-        <section id="portfolio" style="margin-top:20px;">
-			<div class="container" >
-				<div class="col-md-12" style="margin-top:20px; padding-bottom:40px">
-					<h1 style="color:#000; font-size: 24px; ">Bridging the gap between web services monitoring and testing</h1>
-					<img src="img/coming-soon.png" width="20%" height="20%" alt="COMING SOON">
-				</div>
-				<div class="row">
-					<div class="col-sm-6 portfolio-item">
-						<a href="#" class="portfolio-link" >
-							<div class="caption">
-								<div class="caption-content">
-									<i class="fa fa-search-plus fa-3x"></i>
-								</div>
-							</div>
-							<img src="img/icons/filters.png" alt="Alert triage">
-						</a>
-						<div style="padding-top:10px;" class="functional">
-							<h2 >Alert triage: Normalize, Prioritize, and Confirm</h2> 
-						</div>
-					</div>
-					<div class="col-sm-6 portfolio-item">
-						<a href="#" class="portfolio-link" >
-							<div class="caption">
-								<div class="caption-content">
-									<i class="fa fa-search-plus fa-3x"></i>
-								</div>
-							</div>
-							<img src="img/icons/analytics.png" alt="free open source IDS, vulnerabilities scaner tools">
-						</a>
-						<div style="padding-top:10px; " class="functional">
-							<h2 >Endpoint visibility and shadow API discovery</h2> 
-						</div>
-					</div>
-					<div class="col-sm-6 portfolio-item">
-						<a href="#" class="portfolio-link" >
-							<div class="caption">
-								<div class="caption-content">
-									<i class="fa fa-search-plus fa-3x"></i>
-								</div>
-							</div>
-							<img src="img/icons/union.png" alt="integration with Host IDS, Network IDS">
-						</a>
-						<div style="padding-top:10px; " class="functional">
-							<h2 >Detection of Anomalies, Bugs, and Vulnerabilities</h2> 
-						</div>
-					</div>
-					<div class="col-sm-6 portfolio-item">
-						<a href="#" class="portfolio-link" >
-							<div class="caption">
-								<div class="caption-content">
-									<i class="fa fa-search-plus fa-3x"></i>
-								</div>
-							</div>
-							<img src="img/icons/robot.png" alt="open source DevSecOps orchestration">
-						</a>
-						<div style="padding-top:10px;" class="functional">
-							<h2 >DevOps Orchestration</h2> 
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-    </div> <!-- /.jumbotron -->
-	
-	<div id="demo" class="container" >
-		<div class="col-md-12" style="padding-bottom:30px; text-align: left" >
-			<p>Alertflex secure web services faster and at lower cost by automating testing and monitoring. The solution integrates open-source tools (DAST, TAF, IDS) into DevOps pipelines, automatically generates test scenarios using AI, and provides unified reporting of scan results.</p>
-		</div>
-		<div class="container" style="padding-bottom:60px; text-align: center">
-			<img src="img/arch.png" width="60%" height="60%">
-		</div>
-	</div>
-	
-	<div id="download" class="container" style="padding-bottom:60px; padding-top:60px;">
-		<div class="container contact_info" style="text-align: left">
-			<p >The Alterflex project's source code is partially available as open-source on GitHub under the Apache License, Version 2.0. Additionally, the Alertflex Management Console is provided as a pre-built executable binary for easy deployment.</p>
-			<p >If you have further questions about project downloads and contributions, or technical support, please contact us via email at <a id="github_link" href="mailto:info@alertflex.org"><i class="fa fa-envelope"></i> info@alertflex.org</a><p> 
-		</div>
-	</div> <!-- /.container -->
-	
-	<div id="integrations" class="container" style="padding-bottom:30px; padding-top:30px;">
-		<div class="container">
-			<div class="row">
-			
-				<div class="col-md-12 contact_info" style="padding-bottom:30px; ">
-					<div style="text-align: center" >
-						<p style="font-size: 16px;" >Alertflex integrates multiple tools to improve application and infrastructure through centralized testing and observability</p>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/falco.jpg" alt="integration with Falco">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Falco</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/suricata.jpg" alt="integration with Suricata">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Suricata</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/nuclei.jpg" alt="integration with Nuclei">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Nuclei</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/zap.jpg" alt="integration with ZAP">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">ZAP</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/playwright.jpg" alt="integration with Playwright">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Playwright</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/pytest.jpg" alt="integration with Pytest">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Pytest</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/opensearch.jpg" alt="integration with OpenSearch">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">OpenSearch</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/gitea.jpg" alt="integration with Gitea">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Gitea</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/gitlab.jpg" alt="integration with Gitlab">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Gitlab</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/azure-devops.jpg" alt="integration with Azure DevOps">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Azure DevOps</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/jira.jpg" alt="integration with JIRA">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">JIRA</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/github.jpg" alt="integration with Github">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Github</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/telegram.jpg" alt="integration with Telegram">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Telegram</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/discord.jpg" alt="integration with Discord">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Discord</h2>
-					</div>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="card-img-top" src="img/logos/mailgun.jpg" alt="integration with Mailgun">
-					<div class="card-body">
-						<h2 class="card-title" style="margin-top: 10.5px; margin-bottom: 10.5px; font-size: 16px; color: #AAB7B8;">Mailgun</h2>
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-	
-	<footer>
-        <div class="container" id="footer" style="margin-top:5px; margin-bottom:5px;">
-            <div class="row">
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-						<li><a href="mailto:info@alertflex.org"><i class="fa fa-envelope"></i> info@alertflex.org</a>
-                    </ul>
-                </div>
-				                
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-						<li><a href="https://t.me/alertflex" ><span class="fab fa-discord fa-2x"></span></a></li>
-                        <li><a href="https://github.com/alertflex" ><span class="fab fa-github fa-2x"></span></a></li>
-						<li><a href="https://t.me/alertflex" ><span class="fab fa-telegram fa-2x"></span></a></li>
-					</ul>
-                </div>
-				                
-                <div class="col-md-4">
-                    <span class="copyright" style="color: #fff;"><i class="fa fa-copyright"></i> 2025, Oleg Zharkov </span>
-				</div>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color: #4f46e5; font-size: 1.5rem;">
+				<i class="bi bi-diagram-3-fill me-2"></i>ALERTFLEX
+			</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#integrations">Integrations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download">Download</a>
+                    </li>
+                    <li class="nav-item ms-2 d-none d-lg-inline">
+                        <a class="btn btn-primary" href="mailto:info@alertflex.org">Contact Us</a>
+                    </li>
+                </ul>
             </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Bridging the gap between monitoring and testing</h1>
+                    <p class="lead mb-4">Alertflex automates security testing and monitoring for web services, integrating open-source tools into DevOps pipelines, generates test scenarios using AI, and provides unified reporting of scan results.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#download" class="btn btn-primary btn-lg">Get Started</a>
+                        <a href="#features" class="btn btn-outline-primary btn-lg">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="img/coming-soon.png" alt="Alertflex Illustration" class="img-fluid">
+                </div>
+				
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Key Features</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI-Powered Testing</h3>
+                        <p>Automatically generate API tests with intelligent assistant that learns from your application behavior.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Dedicated Pipelines</h3>
+                        <p>GitHub Actions-like workflows for each project to automate scan scenarios and security checks.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3>API Integration</h3>
+                        <p>Trigger pipelines via API to execute multiple security tools and import their consolidated reports automatically.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Quality Gates</h3>
+                        <p>Pipeline status reports with configurable quality gates based on scanner findings and sensor alerts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center section-title">Core Capabilities</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <ul class="feature-list">
+                                <li>AI-Powered Assistant/Wizard for auto-generation API tests</li>
+                                <li>A dedicated pipeline per project to automate scan scenarios</li>
+                                <li>Asynchronously trigger pipelines via API with multiple tool execution</li>
+                                <li>Pipeline status reports with Quality Gate controls</li>
+                                <li>Consolidated reports in CI/CD-friendly formats (JUnit XML, SARIF)</li>
+                                <li>Multiple correlation methods for scan findings</li>
+                                <li>Host and Network IDS for blind vulnerability detection</li>
+                                <li>Monitoring sensor logs converted to OCSF format</li>
+                                <li>External Integration Hub for alert-to-issue conversion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integrations" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Integrations</h2>
+            <p class="text-center mb-5">Alertflex integrates with leading security tools and platforms to provide comprehensive testing and monitoring</p>
             
-        </div> <!-- /.container -->
+            <div class="row g-4">
+                <!-- Security Tools -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/falco.jpg" alt="Falco" class="integration-logo">
+                        <h6 class="mb-0">Falco</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/suricata.jpg" alt="Suricata" class="integration-logo">
+                        <h6 class="mb-0">Suricata</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/nuclei.jpg" alt="Nuclei" class="integration-logo">
+                        <h6 class="mb-0">Nuclei</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/zap.jpg" alt="ZAP" class="integration-logo">
+                        <h6 class="mb-0">ZAP</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/playwright.jpg" alt="Playwright" class="integration-logo">
+                        <h6 class="mb-0">Playwright</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/pytest.jpg" alt="Pytest" class="integration-logo">
+                        <h6 class="mb-0">Pytest</h6>
+                    </div>
+                </div>
+                
+                <!-- Data & Monitoring -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/opensearch.jpg" alt="OpenSearch" class="integration-logo">
+                        <h6 class="mb-0">OpenSearch</h6>
+                    </div>
+                </div>
+                
+                <!-- Version Control -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/gitea.jpg" alt="Gitea" class="integration-logo">
+                        <h6 class="mb-0">Gitea</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/gitlab.jpg" alt="GitLab" class="integration-logo">
+                        <h6 class="mb-0">GitLab</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/github.jpg" alt="GitHub" class="integration-logo">
+                        <h6 class="mb-0">GitHub</h6>
+                    </div>
+                </div>
+                
+                <!-- DevOps -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/azure-devops.jpg" alt="Azure DevOps" class="integration-logo">
+                        <h6 class="mb-0">Azure DevOps</h6>
+                    </div>
+                </div>
+                
+                <!-- Issue Tracking -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/jira.jpg" alt="JIRA" class="integration-logo">
+                        <h6 class="mb-0">JIRA</h6>
+                    </div>
+                </div>
+                
+                <!-- Notifications -->
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/telegram.jpg" alt="Telegram" class="integration-logo">
+                        <h6 class="mb-0">Telegram</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/discord.jpg" alt="Discord" class="integration-logo">
+                        <h6 class="mb-0">Discord</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="integration-card">
+                        <img src="img/logos/mailgun.jpg" alt="Mailgun" class="integration-logo">
+                        <h6 class="mb-0">Mailgun</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="section bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title text-white mb-4">Get Alertflex</h2>
+                    <p class="lead mb-5">The Alertflex project's source code is partially available as open-source on GitHub under the Apache License 2.0. The Management Console is provided as a pre-built executable binary for easy deployment.</p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                        <a href="https://github.com/alertflex" class="btn btn-light btn-lg">
+                            <i class="fab fa-github me-2"></i> View on GitHub
+                        </a>
+                        <a href="mailto:info@alertflex.org" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-envelope me-2"></i> Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <a href="mailto:info@alertflex.org" class="text-white text-decoration-none">
+                        <i class="fas fa-envelope me-2"></i> info@alertflex.org
+                    </a>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <a href="https://github.com/alertflex" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://t.me/alertflex" class="social-icon">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <span class="text-white-50">
+                        &copy; <script>document.write(new Date().getFullYear())</script> Oleg Zharkov. All rights reserved.
+                    </span>
+                </div>
+            </div>
+        </div>
     </footer>
-	
-	<div id="feedback">
-		<div id="feedback-tab"><span class="fab fa-github fa-lg"> GitHub</div>
-	</div>
-	
-	<script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/feedback.js"></script>
-	<script>
-		$(".nav-link").click(function(e) {
-			e.preventDefault();
-			var link = $(this);
-			var href = link.attr("href");
-			$("html,body").animate({scrollTop: $(href).offset().top - 80}, 500);
-			link.closest(".navbar").find(".navbar-toggle:not(.collapsed)").click();
-		});
-	</script>
-  </body>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Smooth Scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>
